@@ -1,0 +1,125 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+header {
+  background-color: #8b65d1;
+  padding: 0.8em;
+  display: flex;
+  width: 100%;
+  height: 62px;
+  position: relative;
+  justify-content: center;
+}
+
+.burger {
+  cursor: pointer;
+  margin-right: auto;
+  width: 24px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 0.8em;
+  transform: translateY(-50%);
+}
+
+article {
+  margin: 2em auto;
+  max-width: 300px;
+  width: 70%;
+}
+
+article p:not(:first-child) {
+  margin-top: 1em;
+}
+
+body {
+  --drawer-transition-time: 0.6s;
+  --drawer-transition-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --drawer-container-max-width: 230px;
+  --drawer-container-width: 70%;
+}
+
+.drawer-container {
+  overflow-y: scroll;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  max-width: var(--drawer-container-max-width);
+  width: var(--drawer-container-width);
+  transform: translateX(calc(-1 * var(--drawer-container-max-width)));
+  transition: all var(--drawer-transition-time)
+    var(--drawer-transition-function);
+  z-index: 10000;
+}
+
+.drawer-close-icon-container {
+  width: 22px;
+  height: 62px;
+  position: absolute;
+  right: 0.8em;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.drawer-close-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.drawer-container--show-yes {
+  transform: translateX(0);
+}
+
+.drawer-list {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: space-between;
+  vertical-align: bottom;
+  margin-left: 0.8em;
+}
+
+.drawer-list li {
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+
+.drawer-curtain {
+  visibility: hidden;
+  background-color: #000;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  transition: all var(--drawer-transition-time)
+    var(--drawer-transition-function);
+}
+
+.drawer-curtain--show-yes {
+  visibility: visible;
+  opacity: 0.7;
+}
+
+.drawer-scroll--enable-no {
+  overflow-y: hidden;
+}
