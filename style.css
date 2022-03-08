@@ -48,6 +48,8 @@ body {
   --drawer-transition-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   --drawer-container-max-width: 230px;
   --drawer-container-width: 70%;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .drawer-container {
