@@ -60,7 +60,7 @@ body {
   background-color: #fff;
   max-width: var(--drawer-container-max-width);
   width: var(--drawer-container-width);
-  transform: translateX(calc(-1 * var(--drawer-container-max-width)));
+  transform: translateX(-100%);
   transition: all var(--drawer-transition-time)
     var(--drawer-transition-function);
   z-index: 10000;
